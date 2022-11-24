@@ -1,0 +1,34 @@
+@import '../../scss/variables';
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+}
+
+.inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: $max-width;
+    height: $header-height;
+    padding: 0 20px;
+
+    .logo {
+        display: flex;
+    }
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+
+    .more-btn {
+        display: flex;
+        cursor: pointer;
+        padding: 4px 8px;
+        margin-left: 8px;
+    }
+}

@@ -1,0 +1,45 @@
+.menu {
+    width: 224px;
+    background-color: #fff;
+    box-shadow: rgb(0 0 0 / 12%) 0px 4px 16px;
+    border-radius: 4px;
+    padding: 8px 0;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.item {
+    width: 100%;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+// Header
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    position: relative;
+}
+
+.back-btn {
+    display: flex;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.title {
+    font-size: 14px;
+}
