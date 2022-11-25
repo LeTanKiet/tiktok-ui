@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { BackIcon } from '../Icons/Icons';
+import { BackIcon } from '../Icons';
 import styles from './Menu.module.scss';
 
 const cx = classNames.bind(styles);

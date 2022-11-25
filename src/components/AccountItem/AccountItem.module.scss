@@ -23,14 +23,15 @@
 
         .nickname {
             color: $text-color;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            margin-right: 4px;
+            margin-right: 8px;
         }
 
         .fullname {
             font-size: 1.3rem;
             color: rgba(22, 24, 35, 0.5);
+            margin-top: 4px;
         }
     }
 }

@@ -2,8 +2,10 @@
     width: 224px;
     background-color: #fff;
     box-shadow: rgb(0 0 0 / 12%) 0px 4px 16px;
-    border-radius: 4px;
+    border-radius: 6px;
     padding: 8px 0;
+    max-height: 640px;
+    overflow-y: auto;
 }
 
 .list {
@@ -16,6 +18,7 @@
     width: 100%;
     justify-content: flex-start;
     margin: 0;
+    border-radius: 0;
 }
 
 // Header
@@ -42,4 +45,8 @@
 
 .title {
     font-size: 14px;
+}
+
+.separate {
+    border-top: 1px solid rgba(22, 24, 35, 0.12);
 }

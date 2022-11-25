@@ -1,0 +1,28 @@
+.toggle {
+    cursor: pointer;
+
+    input {
+        display: none;
+    }
+    .bar {
+        width: 4.4rem;
+        height: 2.4rem;
+        background: rgba(22, 24, 35, 0.12);
+        border-radius: 5rem;
+        padding: 2px;
+        transition: background-color 0.2s linear;
+    }
+    .spinner {
+        width: 2rem;
+        height: 2rem;
+        background-color: white;
+        border-radius: 50%;
+        transition: transform 0.2s linear;
+    }
+    input:checked + .bar {
+        background: rgb(11, 224, 155);
+    }
+    input:checked + .bar .spinner {
+        transform: translateX(2rem);
+    }
+}

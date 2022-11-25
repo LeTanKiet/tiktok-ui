@@ -1,42 +1,25 @@
+import Tippy from '@tippyjs/react';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
+import 'tippy.js/dist/tippy.css';
 
 import images from '~/assets/images';
 import config from '~/config';
+import { MENU_ITEMS_NO_USER, MENU_ITEMS_USER } from '~/utils/data';
 import Button from '../Button/Button';
 import {
     EllipsisVerticalIcon,
-    KeyboardIcon,
-    LanguageIcon,
-    MoonIcon,
-    QuestionIcon,
+    MessageIcon,
+    PaperPlaneIcon,
     UploadIcon,
-} from '../Icons/Icons';
+} from '../Icons';
+import Menu from '../Menu/Menu';
 import Search from '../Search/Search';
 import styles from './Header.module.scss';
-import Menu from '../Menu/Menu';
 
 const cx = classNames.bind(styles);
 
-const MENU_ITEMS = [
-    {
-        icon: <LanguageIcon />,
-        title: 'English',
-    },
-    {
-        icon: <QuestionIcon />,
-        title: 'Feedback and help',
-        to: '/feedback',
-    },
-    {
-        icon: <KeyboardIcon />,
-        title: 'Keyboard shortcuts',
-    },
-    {
-        icon: <MoonIcon />,
-        title: 'Darkmode',
-    },
-];
+const currentUser = true;
 
 const Header = () => {
     return (
@@ -49,16 +32,64 @@ const Header = () => {
                 <Search />
 
                 <div className={cx('actions')}>
-                    <Button leftIcon={<UploadIcon />} outline>
+                    <Button
+                        leftIcon={<UploadIcon />}
+                        to={config.routes.upload}
+                        outline
+                    >
                         Upload
                     </Button>
-                    <Button primary>Log in</Button>
 
-                    <Menu data={MENU_ITEMS}>
-                        <div className={cx('more-btn')}>
-                            <EllipsisVerticalIcon />
-                        </div>
-                    </Menu>
+                    {currentUser ? (
+                        <>
+                            <div>
+                                <Tippy
+                                    placement='bottom'
+                                    interactive
+                                    content='Messages'
+                                >
+                                    <div className={cx('icon-with-noti')}>
+                                        <Link to={config.routes.message}>
+                                            <PaperPlaneIcon
+                                                className={cx('icon')}
+                                            />
+                                        </Link>
+                                        {/* <div className={cx('notification')}></div> */}
+                                    </div>
+                                </Tippy>
+                            </div>
+                            <div>
+                                <Tippy
+                                    placement='bottom'
+                                    interactive
+                                    content='Inbox'
+                                >
+                                    <div className={cx('icon-with-noti')}>
+                                        <MessageIcon className={cx('icon')} />
+                                        <div className={cx('notification')}>
+                                            3
+                                        </div>
+                                    </div>
+                                </Tippy>
+                            </div>
+                            <Menu data={MENU_ITEMS_USER}>
+                                <img
+                                    className={cx('avatar')}
+                                    src='https://files.fullstack.edu.vn/f8-tiktok/users/2/627394cb56d66.jpg'
+                                    alt='Avatar'
+                                ></img>
+                            </Menu>
+                        </>
+                    ) : (
+                        <>
+                            <Button primary>Log in</Button>
+                            <Menu data={MENU_ITEMS_NO_USER}>
+                                <div className={cx('more-btn')}>
+                                    <EllipsisVerticalIcon />
+                                </div>
+                            </Menu>
+                        </>
+                    )}
                 </div>
             </div>
         </div>

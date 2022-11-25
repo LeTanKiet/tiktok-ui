@@ -2,15 +2,15 @@
 
 .search {
     display: flex;
-    width: 360px;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    width: 360px;
     border: 1px solid transparent;
     border-radius: 999px;
     padding-left: 16px;
     background-color: #f1f1f2;
     overflow: hidden;
-    position: relative;
 
     &:focus-within {
         border-color: rgba(22, 24, 35, 0.2);
@@ -31,9 +31,12 @@
     .clear,
     .loading {
         position: absolute;
-        right: 58px;
+        right: 68px;
         top: 50%;
         transform: translateY(-50%);
+        background-color: transparent;
+        border: none;
+        outline: none;
     }
 
     .loading {
@@ -71,6 +74,8 @@
 
 .result {
     width: 360px;
+    padding: 8px 0;
+    background-color: #fff;
     box-shadow: rgb(0 0 0 / 12%) 0px 2px 12px;
 
     &-header {

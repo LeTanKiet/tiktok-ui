@@ -1,15 +1,14 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
 
-import { CheckIcon } from '../Icons/Icons';
+import { CheckIcon } from '../Icons';
 import styles from './AccountItem.module.scss';
 
 const cx = classNames.bind(styles);
 
-const AccountItem = ({ data }) => {
+const AccountItem = ({ data, ...props }) => {
     return (
-        <Link to={`@${data.nickname}`} className={cx('wrapper')}>
+        <a href={`/@${data.nickname}`} className={cx('wrapper')} {...props}>
             <img className={cx('avatar')} src={data.avatar} alt='' />
             <div className={cx('content')}>
                 <div>
@@ -18,7 +17,7 @@ const AccountItem = ({ data }) => {
                 </div>
                 <p className={cx('fullname')}>{data.full_name}</p>
             </div>
-        </Link>
+        </a>
     );
 };
 
