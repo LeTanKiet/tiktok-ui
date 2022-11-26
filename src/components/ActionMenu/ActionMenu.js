@@ -9,7 +9,7 @@ import Header from './Header';
 
 const cx = classNames.bind(styles);
 
-const Menu = ({ data, children }) => {
+const ActionMenu = ({ data, children }) => {
     const [multipleTierData, setMultipleTierData] = useState([{ data }]);
     const [currentData, setCurrentData] = useState(multipleTierData[0]);
 
@@ -66,7 +66,6 @@ const Menu = ({ data, children }) => {
                         </div>
                     </div>
                 )}
-                hideOnClick={false}
             >
                 {children}
             </HeadlessTippy>
@@ -74,9 +73,9 @@ const Menu = ({ data, children }) => {
     );
 };
 
-Menu.propTypes = {
+ActionMenu.propTypes = {
     data: PropTypes.array.isRequired,
     children: PropTypes.node.isRequired,
 };
 
-export default Menu;
+export default ActionMenu;

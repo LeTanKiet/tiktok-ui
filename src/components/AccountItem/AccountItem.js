@@ -3,13 +3,18 @@ import classNames from 'classnames/bind';
 
 import { CheckIcon } from '../Icons';
 import styles from './AccountItem.module.scss';
+import Image from '../Image/Image';
 
 const cx = classNames.bind(styles);
 
-const AccountItem = ({ data, ...props }) => {
+const AccountItem = ({ data, small, ...props }) => {
     return (
-        <a href={`/@${data.nickname}`} className={cx('wrapper')} {...props}>
-            <img className={cx('avatar')} src={data.avatar} alt='' />
+        <a
+            href={`/@${data.nickname}`}
+            className={cx('wrapper', { small })}
+            {...props}
+        >
+            <Image className={cx('avatar')} src={data.avatar} alt='' />
             <div className={cx('content')}>
                 <div>
                     <span className={cx('nickname')}>{data.nickname}</span>
@@ -23,6 +28,7 @@ const AccountItem = ({ data, ...props }) => {
 
 AccountItem.propTypes = {
     data: PropTypes.object.isRequired,
+    small: PropTypes.bool,
 };
 
 export default AccountItem;

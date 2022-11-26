@@ -2,8 +2,9 @@ import HeadlessTippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
 import { useEffect, useRef, useState } from 'react';
+import search from '~/api/searchApi';
 import useDebounced from '~/hooks/useDebouce';
-import AccountItem from '../AccountItem/AccountItem';
+import AccountMenu from '../AccountMenu/AccountMenu';
 import { ClearIcon, LoadingIcon, SearchIcon } from '../Icons';
 import styles from './Search.module.scss';
 
@@ -24,16 +25,13 @@ const Search = () => {
             setShowResult(true);
             setLoading(true);
 
-            fetch(
-                `https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(
-                    debounced
-                )}&type=less`
-            )
-                .then((res) => res.json())
-                .then((res) => {
-                    setSearchResult(res.data);
-                    setLoading(false);
-                });
+            const getSearchResult = async () => {
+                const response = await search(debounced);
+
+                setSearchResult(response.data);
+                setLoading(false);
+            };
+            getSearchResult();
         } else {
             setSearchResult([]);
             setShowResult(false);
@@ -59,16 +57,10 @@ const Search = () => {
                 placement='bottom'
                 render={(attrs) => (
                     <div className={cx('result')} tabIndex='-1' {...attrs}>
-                        <h3 className={cx('result-header')}>Accounts</h3>
-                        {searchResult.map((item) => {
-                            return (
-                                <AccountItem
-                                    data={item}
-                                    key={item.id}
-                                    onClick={handleMoveToProfile}
-                                />
-                            );
-                        })}
+                        <AccountMenu
+                            data={searchResult}
+                            onItemClick={handleMoveToProfile}
+                        />
                     </div>
                 )}
                 onClickOutside={() => setShowResult(false)}

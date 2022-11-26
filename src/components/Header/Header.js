@@ -13,13 +13,12 @@ import {
     PaperPlaneIcon,
     UploadIcon,
 } from '../Icons';
-import Menu from '../Menu/Menu';
+import ActionMenu from '../ActionMenu/ActionMenu';
 import Search from '../Search/Search';
 import styles from './Header.module.scss';
+import store from '~/utils/store';
 
 const cx = classNames.bind(styles);
-
-const currentUser = true;
 
 const Header = () => {
     return (
@@ -40,7 +39,7 @@ const Header = () => {
                         Upload
                     </Button>
 
-                    {currentUser ? (
+                    {store.currentUser ? (
                         <>
                             <div>
                                 <Tippy
@@ -72,22 +71,22 @@ const Header = () => {
                                     </div>
                                 </Tippy>
                             </div>
-                            <Menu data={MENU_ITEMS_USER}>
+                            <ActionMenu data={MENU_ITEMS_USER}>
                                 <img
                                     className={cx('avatar')}
                                     src='https://files.fullstack.edu.vn/f8-tiktok/users/2/627394cb56d66.jpg'
                                     alt='Avatar'
                                 ></img>
-                            </Menu>
+                            </ActionMenu>
                         </>
                     ) : (
                         <>
                             <Button primary>Log in</Button>
-                            <Menu data={MENU_ITEMS_NO_USER}>
+                            <ActionMenu data={MENU_ITEMS_NO_USER}>
                                 <div className={cx('more-btn')}>
                                     <EllipsisVerticalIcon />
                                 </div>
-                            </Menu>
+                            </ActionMenu>
                         </>
                     )}
                 </div>
