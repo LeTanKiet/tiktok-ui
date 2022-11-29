@@ -1,6 +1,23 @@
+@import '../../scss/variables';
+
 .header {
     font-size: 1.4rem;
     font-weight: 600;
     padding: 4px 12px;
     color: rgb(22 24 35 / 50%);
+    margin-bottom: 4px;
+
+    &.small {
+        font-size: 80%;
+    }
+}
+
+.see-all,
+.see-less {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-left: 16px;
+    color: $primary-color;
+    cursor: pointer;
+    margin-bottom: 16px;
 }

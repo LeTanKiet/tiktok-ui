@@ -16,3 +16,7 @@ export { default as SettingIcon } from './Setting';
 export { default as TiktokIcon } from './Tiktok';
 export { default as UploadIcon } from './Upload';
 export { default as UserIcon } from './User';
+export { default as HomeIcon } from './Home';
+export { default as HomeFillIcon } from './HomeFill';
+export { default as FollowingIcon } from './Following';
+export { default as FollowingFillIcon } from './FollowingFill';

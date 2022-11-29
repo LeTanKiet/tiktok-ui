@@ -59,6 +59,7 @@ const Search = () => {
                     <div className={cx('result')} tabIndex='-1' {...attrs}>
                         <AccountMenu
                             data={searchResult}
+                            title='Accounts'
                             onItemClick={handleMoveToProfile}
                         />
                     </div>
