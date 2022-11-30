@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const SearchIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
     <svg
         width={width}
@@ -14,5 +16,11 @@ const SearchIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
         ></path>
     </svg>
 );
+
+SearchIcon.propTypes = {
+    width: PropTypes.string,
+    height: PropTypes.string,
+    className: PropTypes.string,
+};
 
 export default SearchIcon;

@@ -13,10 +13,10 @@ import {
     PaperPlaneIcon,
     UploadIcon,
 } from '../Icons';
-import ActionMenu from '../ActionMenu/ActionMenu';
 import Search from '../Search/Search';
 import styles from './Header.module.scss';
 import store from '~/utils/store';
+import Menu from '../Menu/Menu';
 
 const cx = classNames.bind(styles);
 
@@ -71,22 +71,22 @@ const Header = () => {
                                     </div>
                                 </Tippy>
                             </div>
-                            <ActionMenu data={MENU_ITEMS_USER}>
+                            <Menu data={MENU_ITEMS_USER}>
                                 <img
                                     className={cx('avatar')}
                                     src='https://files.fullstack.edu.vn/f8-tiktok/users/2/627394cb56d66.jpg'
                                     alt='Avatar'
                                 ></img>
-                            </ActionMenu>
+                            </Menu>
                         </>
                     ) : (
                         <>
                             <Button primary>Log in</Button>
-                            <ActionMenu data={MENU_ITEMS_NO_USER}>
+                            <Menu data={MENU_ITEMS_NO_USER}>
                                 <div className={cx('more-btn')}>
                                     <EllipsisVerticalIcon />
                                 </div>
-                            </ActionMenu>
+                            </Menu>
                         </>
                     )}
                 </div>

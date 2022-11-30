@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const MessageIcon = ({ width = '3.2rem', height = '3.2rem', className }) => (
     <svg
         width={width}
@@ -14,5 +16,11 @@ const MessageIcon = ({ width = '3.2rem', height = '3.2rem', className }) => (
         ></path>
     </svg>
 );
+
+MessageIcon.propTypes = {
+    width: PropTypes.string,
+    height: PropTypes.string,
+    className: PropTypes.string,
+};
 
 export default MessageIcon;

@@ -1,0 +1,106 @@
+@import '../../scss/variables';
+
+.post-item {
+    max-height: 692px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(22, 24, 35, 0.2);
+
+    .header {
+        display: flex;
+
+        .avatar {
+            width: 56px;
+            height: 56px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+
+        .name-field {
+            cursor: pointer;
+
+            &:hover {
+                .nickname {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .nickname {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .fullname {
+            font-size: 1.2rem;
+            margin-left: 6px;
+        }
+
+        .description {
+            font-size: 1.5rem;
+            max-width: 510px;
+        }
+
+        .follow-btn {
+            height: fit-content;
+            margin-top: 8px;
+        }
+    }
+
+    .body {
+        margin-left: 66px;
+        display: flex;
+
+        .react-field {
+            position: relative;
+            flex: 1;
+
+            .like,
+            .comment,
+            .share {
+                position: absolute;
+                cursor: pointer;
+            }
+
+            .icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                background-color: rgba(22, 24, 35, 0.06);
+            }
+
+            .count {
+                text-align: center;
+                font-size: 1.2rem;
+                font-weight: 600;
+                margin-top: 4px;
+            }
+
+            .like {
+                left: 20px;
+                bottom: 180px;
+
+                &.active {
+                    color: $primary-color;
+
+                    .count {
+                        color: $text-color;
+                    }
+                }
+            }
+
+            .comment {
+                left: 20px;
+                bottom: 100px;
+            }
+
+            .share {
+                left: 20px;
+                bottom: 20px;
+            }
+        }
+    }
+}

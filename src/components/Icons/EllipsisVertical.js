@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const EllipsisVerticalIcon = ({
     width = '2rem',
     height = '2rem',
@@ -18,5 +20,11 @@ const EllipsisVerticalIcon = ({
         ></path>
     </svg>
 );
+
+EllipsisVerticalIcon.propTypes = {
+    width: PropTypes.string,
+    height: PropTypes.string,
+    className: PropTypes.string,
+};
 
 export default EllipsisVerticalIcon;

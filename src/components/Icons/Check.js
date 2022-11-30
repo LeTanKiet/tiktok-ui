@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const CheckIcon = ({ width = '1.4rem', height = '1.4rem', className }) => (
     <svg
         width={width}
@@ -16,5 +18,11 @@ const CheckIcon = ({ width = '1.4rem', height = '1.4rem', className }) => (
         ></path>
     </svg>
 );
+
+CheckIcon.propTypes = {
+    width: PropTypes.string,
+    height: PropTypes.string,
+    className: PropTypes.string,
+};
 
 export default CheckIcon;

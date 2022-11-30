@@ -2,13 +2,53 @@
 
 .wrapper {
     width: 340px;
-    padding-top: 20px;
+    padding: 20px 0;
     max-height: calc(100vh - $header-height);
     overflow-y: auto;
 
     .separate {
         height: 1px;
         background-color: rgba(22, 24, 35, 0.12);
-        margin-bottom: 12px;
+        margin: 0 12px 12px;
+    }
+
+    .discover {
+        margin-bottom: 16px;
+
+        &-header {
+            font-size: 1.4rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            color: rgba(22, 24, 35, 0.5);
+            margin-bottom: 4px;
+        }
+
+        &-keyword {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            max-width: 100%;
+            font-size: 1.3rem;
+            color: $text-color;
+            padding: 2px 8px;
+            border: 1px solid rgba(22, 24, 35, 0.2);
+            border-radius: 99px;
+            margin: 4px;
+
+            &:hover {
+                cursor: pointer;
+                background-color: rgba(22, 24, 35, 0.03);
+            }
+
+            span {
+                margin-left: 4px;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                word-break: break-word;
+            }
+        }
     }
 }

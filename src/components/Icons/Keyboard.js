@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const KeyboardIcon = ({ width = '2rem', height = '2rem', className }) => (
     <svg
         width={width}
@@ -14,5 +16,11 @@ const KeyboardIcon = ({ width = '2rem', height = '2rem', className }) => (
         ></path>
     </svg>
 );
+
+KeyboardIcon.propTypes = {
+    width: PropTypes.string,
+    height: PropTypes.string,
+    className: PropTypes.string,
+};
 
 export default KeyboardIcon;

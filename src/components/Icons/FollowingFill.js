@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const FollowingFillIcon = ({
     width = '3.2rem',
     height = '3.2rem',
@@ -17,5 +19,11 @@ const FollowingFillIcon = ({
         <path d='M33 26.5C36.0376 26.5 38.5 24.0376 38.5 21C38.5 17.9624 36.0376 15.5 33 15.5C29.9624 15.5 27.5 17.9624 27.5 21C27.5 24.0376 29.9624 26.5 33 26.5Z'></path>
     </svg>
 );
+
+FollowingFillIcon.propTypes = {
+    width: PropTypes.string,
+    height: PropTypes.string,
+    className: PropTypes.string,
+};
 
 export default FollowingFillIcon;

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const PaperPlaneIcon = ({ width = '2.6rem', height = '2.6rem', className }) => (
     <svg
         width={width}
@@ -14,5 +16,11 @@ const PaperPlaneIcon = ({ width = '2.6rem', height = '2.6rem', className }) => (
         ></path>
     </svg>
 );
+
+PaperPlaneIcon.propTypes = {
+    width: PropTypes.string,
+    height: PropTypes.string,
+    className: PropTypes.string,
+};
 
 export default PaperPlaneIcon;

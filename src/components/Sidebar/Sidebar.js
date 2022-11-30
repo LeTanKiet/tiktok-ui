@@ -1,9 +1,11 @@
 import classNames from 'classnames/bind';
+import { useEffect, useState } from 'react';
+import { DISCOVER_LIST, FOOTER_LIST } from '~/utils/data';
+import suggested from '../../api/suggestedApi';
+import AccountMenu from '../AccountMenu/AccountMenu';
+import Footer from './Footer/Footer';
 import NavMenu from './NavMenu/NavMenu';
 import styles from './Sidebar.module.scss';
-import suggested from '../../api/suggestedApi';
-import { useEffect, useState } from 'react';
-import AccountMenu from '../AccountMenu/AccountMenu';
 
 const cx = classNames.bind(styles);
 
@@ -44,12 +46,21 @@ const Sidebar = () => {
                 moreTitle='See More'
             />
 
-            <AccountMenu
-                data={suggestedAccounts}
-                title='Following accounts'
-                small
-                moreTitle='See More'
-            />
+            <div className={cx('separate')}></div>
+
+            <div className={cx('discover')}>
+                <h3 className={cx('discover-header')}>Discover</h3>
+                {DISCOVER_LIST.map((item, index) => (
+                    <div key={index} className={cx('discover-keyword')}>
+                        {item.icon}
+                        <span>{item.title}</span>
+                    </div>
+                ))}
+            </div>
+
+            <div className={cx('separate')}></div>
+
+            <Footer data={FOOTER_LIST} />
         </div>
     );
 };

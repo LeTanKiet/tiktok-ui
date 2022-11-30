@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const FollowingIcon = ({ width = '3.2rem', height = '3.2rem', className }) => (
     <svg
         width={width}
@@ -24,5 +26,11 @@ const FollowingIcon = ({ width = '3.2rem', height = '3.2rem', className }) => (
         ></path>
     </svg>
 );
+
+FollowingIcon.propTypes = {
+    width: PropTypes.string,
+    height: PropTypes.string,
+    className: PropTypes.string,
+};
 
 export default FollowingIcon;

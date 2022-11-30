@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const UploadIcon = ({ width = '1.6rem', height = '1.6rem', className }) => (
     <svg
         width={width}
@@ -14,5 +16,11 @@ const UploadIcon = ({ width = '1.6rem', height = '1.6rem', className }) => (
         ></path>
     </svg>
 );
+
+UploadIcon.propTypes = {
+    width: PropTypes.string,
+    height: PropTypes.string,
+    className: PropTypes.string,
+};
 
 export default UploadIcon;

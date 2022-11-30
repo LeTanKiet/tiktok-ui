@@ -12,6 +12,7 @@ const Button = ({
     primary = false,
     outline = false,
     rounded = false,
+    small = false,
     leftIcon,
     rightIcon,
     className,
@@ -38,6 +39,7 @@ const Button = ({
         primary,
         outline,
         rounded,
+        small,
         [className]: className,
     });
 

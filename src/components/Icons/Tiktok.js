@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const TiktokIcon = ({ width = '2rem', height = '2rem', className }) => (
     <svg
         width={width}
@@ -19,5 +21,11 @@ const TiktokIcon = ({ width = '2rem', height = '2rem', className }) => (
         ></path>
     </svg>
 );
+
+TiktokIcon.propTypes = {
+    width: PropTypes.string,
+    height: PropTypes.string,
+    className: PropTypes.string,
+};
 
 export default TiktokIcon;

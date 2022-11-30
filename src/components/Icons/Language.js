@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const LanguageIcon = ({ width = '2rem', height = '2rem', className }) => (
     <svg
         width={width}
@@ -14,5 +16,11 @@ const LanguageIcon = ({ width = '2rem', height = '2rem', className }) => (
         ></path>
     </svg>
 );
+
+LanguageIcon.propTypes = {
+    width: PropTypes.string,
+    height: PropTypes.string,
+    className: PropTypes.string,
+};
 
 export default LanguageIcon;

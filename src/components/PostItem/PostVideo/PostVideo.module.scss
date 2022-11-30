@@ -1,0 +1,50 @@
+.wrapper {
+    position: relative;
+    width: fit-content;
+    max-width: 508px;
+    max-height: 508px;
+    border-radius: 8px;
+    margin-top: 16px;
+
+    .video {
+        max-width: 508px;
+        max-height: 508px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .report {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 12px;
+        top: 20px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #fff;
+        padding: 8px;
+        cursor: pointer;
+
+        &-icon {
+            margin-right: 6px;
+        }
+    }
+
+    .play,
+    .pause {
+        position: absolute;
+        left: 16px;
+        bottom: 32px;
+        cursor: pointer;
+        padding: 8px;
+    }
+
+    .volumn-mute,
+    .volumn {
+        position: absolute;
+        right: 16px;
+        bottom: 32px;
+        cursor: pointer;
+        padding: 8px;
+    }
+}

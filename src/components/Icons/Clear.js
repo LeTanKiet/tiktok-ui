@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const ClearIcon = ({ width = '1.6rem', height = '1.6rem', className }) => (
     <div>
         <svg
@@ -16,5 +18,11 @@ const ClearIcon = ({ width = '1.6rem', height = '1.6rem', className }) => (
         </svg>
     </div>
 );
+
+ClearIcon.propTypes = {
+    width: PropTypes.string,
+    height: PropTypes.string,
+    className: PropTypes.string,
+};
 
 export default ClearIcon;

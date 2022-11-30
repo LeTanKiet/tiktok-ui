@@ -1,0 +1,21 @@
+.footer {
+    margin: 8px 0;
+
+    &-item {
+        display: inline-block;
+        font-size: 1.2rem;
+        color: rgba(22, 24, 35, 0.5);
+        margin: 8px 4px;
+
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+
+    .copyright {
+        font-size: 1.2rem;
+        color: rgba(22, 24, 35, 0.5);
+        margin-top: 8px;
+    }
+}

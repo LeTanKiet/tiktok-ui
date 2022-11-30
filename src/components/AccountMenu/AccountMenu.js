@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
-import AccountItem from '../AccountItem/AccountItem';
+import AccountItem from './AccountItem/AccountItem';
 import styles from './AccountMenu.module.scss';
 
 const cx = classNames.bind(styles);
