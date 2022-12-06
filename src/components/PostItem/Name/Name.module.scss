@@ -1,0 +1,19 @@
+.name-field {
+    cursor: pointer;
+
+    &:hover {
+        .nickname {
+            text-decoration: underline;
+        }
+    }
+}
+
+.nickname {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.fullname {
+    font-size: 1.2rem;
+    margin-left: 6px;
+}

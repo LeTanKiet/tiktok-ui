@@ -8,6 +8,10 @@
     background-color: #fff;
     box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
     z-index: 999;
+
+    &.full .inner {
+        max-width: 100%;
+    }
 }
 
 .inner {

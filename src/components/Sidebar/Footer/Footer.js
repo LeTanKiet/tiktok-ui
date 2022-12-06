@@ -7,8 +7,10 @@ const cx = classNames.bind(styles);
 const Footer = ({ data }) => {
     return (
         <div className={cx('footer')}>
-            {data.map((item) => (
-                <span className={cx('footer-item')}>{item}</span>
+            {data.map((item, index) => (
+                <span key={index} className={cx('footer-item')}>
+                    {item}
+                </span>
             ))}
             <div className={cx('copyright')}>&copy; 2022 TikTok</div>
         </div>

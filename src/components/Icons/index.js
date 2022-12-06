@@ -43,3 +43,8 @@ export { default as ShareLineIcon } from './ShareLine';
 export { default as SharePinterestIcon } from './SharePinterest';
 export { default as MusicIcon } from './Music';
 export { default as HashTagIcon } from './HashTag';
+export { default as LinkIcon } from './Link';
+export { default as PlaySolidIcon } from './PlaySolid';
+export { default as LockIcon } from './Lock';
+export { default as EllipsisHorizontalIcon } from './EllipsisHorizontal';
+export { default as BlockIcon } from './Block';

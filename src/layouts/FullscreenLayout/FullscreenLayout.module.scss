@@ -8,15 +8,18 @@
 
 .container {
     display: flex;
-    justify-content: space-between;
     width: 100%;
-    max-width: $max-width;
     height: calc(100vh - $header-height);
     margin-top: $header-height;
+    padding: 0 8px;
+}
+
+.sidebar {
+    width: 224px;
 }
 
 .content {
-    width: 692px;
+    flex: 1;
     margin: 0 16px;
     padding: 24px 0;
     height: calc(100vh - 60px);
@@ -25,11 +28,4 @@
     &::-webkit-scrollbar {
         display: none;
     }
-}
-
-.get-app {
-    position: fixed;
-    bottom: 8px;
-    right: 8px;
-    z-index: 10;
 }

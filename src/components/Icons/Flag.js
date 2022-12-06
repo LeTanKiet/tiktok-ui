@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 
 const FlagIcon = ({ width = '1.6rem', height = '1.6rem', className }) => (
     <svg
-        className={className}
         width={width}
         height={height}
+        className={className}
         viewBox='0 0 48 48'
-        fill='#fff'
+        fill='currentColor'
         xmlns='http://www.w3.org/2000/svg'
     >
         <path

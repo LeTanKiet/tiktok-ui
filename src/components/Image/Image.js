@@ -9,12 +9,12 @@ const Image = ({
     fallback = images.no_image,
     className = '',
 }) => {
-    const [_fallback, setFallback] = useState(src || fallback);
+    const [_fallback, setFallback] = useState('');
 
     return (
         <img
             className={className}
-            src={_fallback}
+            src={_fallback || src}
             alt={alt}
             onError={() => setFallback(fallback)}
         />

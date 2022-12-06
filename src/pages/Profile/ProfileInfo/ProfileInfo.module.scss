@@ -1,0 +1,77 @@
+.wrapper {
+    position: relative;
+    width: 624px;
+    padding: 16px 32px;
+}
+
+.personal-info {
+    display: flex;
+
+    .avatar {
+        width: 116px;
+        height: 116px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-right: 24px;
+    }
+
+    .nickname {
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    .icon {
+        margin-left: 8px;
+    }
+
+    .fullname {
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 8px;
+    }
+
+    .follow-btn {
+        min-width: 200px;
+        margin-top: 24px;
+    }
+}
+
+.tiktok-info {
+    display: flex;
+    gap: 20px;
+    margin-top: 24px;
+
+    .count {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-right: 4px;
+    }
+}
+
+.bio {
+    font-size: 1.5rem;
+    margin-top: 12px;
+}
+
+.link {
+    display: flex;
+    gap: 4px;
+    margin-top: 12px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.share-icon {
+    position: absolute;
+    right: 0;
+    top: 16px;
+    cursor: pointer;
+}
+
+.ellipsis-icon {
+    position: absolute;
+    right: -48px;
+    top: 16px;
+    cursor: pointer;
+}

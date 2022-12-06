@@ -21,18 +21,16 @@ const Home = () => {
     };
 
     return (
-        <div>
-            <InfiniteScroll
-                dataLength={currentData.length}
-                next={fetchMoreData}
-                hasMore={true}
-                height='100vh'
-            >
-                {currentData.map((post) => (
-                    <PostItem key={post.id} data={post} />
-                ))}
-            </InfiniteScroll>
-        </div>
+        <InfiniteScroll
+            dataLength={currentData.length}
+            next={fetchMoreData}
+            hasMore={true}
+            scrollableTarget='homeScrollable'
+        >
+            {currentData.map((post) => (
+                <PostItem key={post.id} data={post} />
+            ))}
+        </InfiniteScroll>
     );
 };
 

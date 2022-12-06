@@ -1,15 +1,15 @@
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import { MENU_ITEM_SHARE } from '~/utils/data';
 import Button from '../Button/Button';
-import { CommentIcon, HeartIcon, ShareIcon } from '../Icons';
+import { CommentIcon, HeartIcon, MusicIcon, ShareIcon } from '../Icons';
 import Image from '../Image/Image';
+import Name from './Name/Name';
 import styles from './PostItem.module.scss';
 import PostVideo from './PostVideo/PostVideo';
-import ShareMenu from './ShareMenu/ShareMenu';
+import ShareMenu from '../ShareMenu/ShareMenu';
 
 const cx = classNames.bind(styles);
 
@@ -25,15 +25,12 @@ const PostItem = ({ data }) => {
                     alt={data.uuid}
                 />
                 <div>
-                    <Link to={`/@profile`} className={cx('name-field')}>
-                        <span className={cx('nickname')}>
-                            {data.user.nickname}
-                        </span>
-                        <span
-                            className={cx('fullname')}
-                        >{`${data.user.first_name} ${data.user.last_name}`}</span>
-                    </Link>
+                    <Name user={data.user} />
                     <p className={cx('description')}>{data.description}</p>
+                    <strong className={cx('music')}>
+                        <MusicIcon />
+                        {data.music || 'music'}
+                    </strong>
                 </div>
 
                 <Button primary outline small className={cx('follow-btn')}>

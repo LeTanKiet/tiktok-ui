@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Tippy from '@tippyjs/react';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
@@ -20,9 +21,9 @@ import Menu from '../Menu/Menu';
 
 const cx = classNames.bind(styles);
 
-const Header = () => {
+const Header = ({ full = false }) => {
     return (
-        <div className={cx('wrapper')}>
+        <div className={cx('wrapper', { full })}>
             <div className={cx('inner')}>
                 <Link to={config.routes.home} className={cx('logo')}>
                     <img src={images.logo} alt='Tiktok' />
@@ -93,6 +94,10 @@ const Header = () => {
             </div>
         </div>
     );
+};
+
+Header.propTypes = {
+    full: PropTypes.bool,
 };
 
 export default Header;

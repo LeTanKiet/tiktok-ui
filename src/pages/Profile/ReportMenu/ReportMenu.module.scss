@@ -1,0 +1,30 @@
+.menu {
+    width: 180px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 4px 16px;
+
+    &-item {
+        display: flex;
+        align-items: center;
+        padding: 12px 24px;
+
+        .title {
+            margin-left: 8px;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgba(58, 65, 107, 0.03);
+        }
+    }
+
+    .separate {
+        width: 85%;
+        height: 1px;
+        margin: auto;
+        background-color: rgba(22, 24, 35, 0.12);
+    }
+}

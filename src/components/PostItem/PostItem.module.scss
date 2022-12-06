@@ -16,34 +16,23 @@
             margin-right: 12px;
         }
 
-        .name-field {
-            cursor: pointer;
-
-            &:hover {
-                .nickname {
-                    text-decoration: underline;
-                }
-            }
-        }
-
-        .nickname {
-            font-size: 1.6rem;
-            font-weight: 700;
-        }
-
-        .fullname {
-            font-size: 1.2rem;
-            margin-left: 6px;
-        }
-
         .description {
             font-size: 1.5rem;
             max-width: 510px;
+            margin: 8px 0;
+        }
+
+        .music {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 1.5rem;
         }
 
         .follow-btn {
             height: fit-content;
             margin-top: 8px;
+            margin-left: auto;
         }
     }
 

@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 
 const HashTagIcon = ({ width = '1.6rem', height = '1.6rem', className }) => (
     <svg
-        class='tiktok-1hy6k9f-StyledNumber eikhr9j9'
         width={width}
         height={height}
         className={className}

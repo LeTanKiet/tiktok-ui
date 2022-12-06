@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { useState } from 'react';
 import { ArrowDownIcon } from '~/components/Icons';
-import Button from '../../Button/Button';
+import Button from '../Button/Button';
 import styles from './ShareMenu.module.scss';
 
 const cx = classNames.bind(styles);
