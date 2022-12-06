@@ -14,14 +14,14 @@ import ShareMenu from '../ShareMenu/ShareMenu';
 const cx = classNames.bind(styles);
 
 const PostItem = ({ data = {} }) => {
-    const [isLiked, setIsLiked] = useState(data?.is_liked || false);
+    const [isLiked, setIsLiked] = useState(data.is_liked || false);
 
     return (
         <div className={cx('post-item')}>
             <div className={cx('header')}>
                 <Image
                     className={cx('avatar')}
-                    src={data.user.avatar}
+                    src={data.user?.avatar}
                     alt={data.uuid}
                 />
                 <div>
