@@ -7,8 +7,8 @@ import styles from './Button.module.scss';
 const cx = classNames.bind(styles);
 
 const Button = ({
-    to,
-    href,
+    to = '',
+    href = '',
     primary = false,
     outline = false,
     rounded = false,

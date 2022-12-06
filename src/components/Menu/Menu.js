@@ -9,7 +9,7 @@ import Header from './Header';
 
 const cx = classNames.bind(styles);
 
-const Menu = ({ data, children }) => {
+const Menu = ({ data = [], children }) => {
     const [multipleTierData, setMultipleTierData] = useState([{ data }]);
     const [currentData, setCurrentData] = useState(multipleTierData[0]);
 

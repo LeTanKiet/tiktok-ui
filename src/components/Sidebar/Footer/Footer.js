@@ -4,7 +4,7 @@ import styles from './Footer.module.scss';
 
 const cx = classNames.bind(styles);
 
-const Footer = ({ data }) => {
+const Footer = ({ data = [] }) => {
     return (
         <div className={cx('footer')}>
             {data.map((item, index) => (

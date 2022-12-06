@@ -9,7 +9,7 @@ import styles from './ShareMenu.module.scss';
 
 const cx = classNames.bind(styles);
 
-const ShareMenu = ({ data, children }) => {
+const ShareMenu = ({ data = [], children }) => {
     const [expand, setExpand] = useState(true);
     const [currentData, setCurrentData] = useState(data.slice(0, 5));
 

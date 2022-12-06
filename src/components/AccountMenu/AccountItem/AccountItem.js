@@ -10,7 +10,12 @@ import AccountItemTooltip from '../AccountItemTooltip/AccountItemTooltip';
 
 const cx = classNames.bind(styles);
 
-const AccountItem = ({ data, tooltip, small, ...props }) => {
+const AccountItem = ({
+    data = {},
+    tooltip = false,
+    small = false,
+    ...props
+}) => {
     return (
         <div>
             <HeadlessTippy

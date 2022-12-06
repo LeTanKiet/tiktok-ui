@@ -8,7 +8,7 @@ import AccountItemTooltip from '~/components/AccountMenu/AccountItemTooltip/Acco
 
 const cx = classNames.bind(styles);
 
-const Name = ({ user }) => {
+const Name = ({ user = {} }) => {
     return (
         <div>
             <HeadlessTippy

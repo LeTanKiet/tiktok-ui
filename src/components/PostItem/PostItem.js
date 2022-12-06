@@ -13,8 +13,8 @@ import ShareMenu from '../ShareMenu/ShareMenu';
 
 const cx = classNames.bind(styles);
 
-const PostItem = ({ data }) => {
-    const [isLiked, setIsLiked] = useState(data.is_liked);
+const PostItem = ({ data = {} }) => {
+    const [isLiked, setIsLiked] = useState(data?.is_liked || false);
 
     return (
         <div className={cx('post-item')}>
