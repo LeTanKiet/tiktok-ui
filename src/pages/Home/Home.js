@@ -27,8 +27,8 @@ const Home = () => {
             hasMore={true}
             scrollableTarget='homeScrollable'
         >
-            {currentData.map((post) => (
-                <PostItem key={post.id} data={post} />
+            {currentData.map((post, index) => (
+                <PostItem key={index} data={post} />
             ))}
         </InfiniteScroll>
     );
