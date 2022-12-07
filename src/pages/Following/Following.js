@@ -8,6 +8,10 @@ const Following = () => {
     const [currentData, setCurrentData] = useState([]);
 
     useEffect(() => {
+        document.title = `Following - Watch videos from creators you follow | Tiktok`;
+    }, []);
+
+    useEffect(() => {
         (async function () {
             const homeData = await followingPage(currentPage);
             setCurrentData(currentData.concat(homeData));

@@ -10,6 +10,11 @@ const Profile = () => {
     const [user, setUser] = useState({});
 
     useEffect(() => {
+        const fullname = `${user.first_name} ${user.last_name}`;
+        document.title = `${fullname} (@${nickname}) Tiktok | Watch ${fullname}'s Newest Tiktok videos`;
+    }, [nickname, user]);
+
+    useEffect(() => {
         (async () => {
             const user = await profile(nickname);
             setUser(user);

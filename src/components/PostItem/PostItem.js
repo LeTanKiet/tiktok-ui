@@ -1,23 +1,46 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
+import { useEffect } from 'react';
+import { useRef } from 'react';
 import { useState } from 'react';
 
 import { MENU_ITEM_SHARE } from '~/utils/data';
 import Button from '../Button/Button';
 import { CommentIcon, HeartIcon, MusicIcon, ShareIcon } from '../Icons';
 import Image from '../Image/Image';
+import ShareMenu from '../ShareMenu/ShareMenu';
 import Name from './Name/Name';
 import styles from './PostItem.module.scss';
 import PostVideo from './PostVideo/PostVideo';
-import ShareMenu from '../ShareMenu/ShareMenu';
 
 const cx = classNames.bind(styles);
 
 const PostItem = ({ data = {} }) => {
     const [isLiked, setIsLiked] = useState(data.is_liked || false);
+    const videoRef = useRef();
+    const postRef = useRef();
+
+    useEffect(() => {
+        postRef.current.addEventListener('mouseover', () => {
+            videoRef.current.handlePlay();
+        });
+        postRef.current.addEventListener('mouseleave', () => {
+            videoRef.current.handlePause();
+        });
+        return () => {
+            postRef.current.removeEventListener('mouseover', () => {
+                videoRef.current.handlePlay();
+            });
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+            postRef.current.removeEventListener('mouseleave', () => {
+                videoRef.current.handlePause();
+            });
+        };
+    }, []);
 
     return (
-        <div className={cx('post-item')}>
+        <div className={cx('post-item')} ref={postRef}>
             <div className={cx('header')}>
                 <Image
                     className={cx('avatar')}
@@ -39,7 +62,7 @@ const PostItem = ({ data = {} }) => {
             </div>
 
             <div className={cx('body')}>
-                <PostVideo src={data.file_url} />
+                <PostVideo src={data.file_url} ref={videoRef} />
                 <div className={cx('react-field')}>
                     <div
                         className={cx('like', { active: isLiked })}

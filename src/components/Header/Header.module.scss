@@ -1,4 +1,5 @@
 @import '../../scss/variables';
+@import '../../scss/breakpoint';
 
 .wrapper {
     display: flex;
@@ -46,6 +47,10 @@
         object-fit: cover;
         border-radius: 50%;
         cursor: pointer;
+    }
+
+    @include mobile {
+        display: none;
     }
 }
 

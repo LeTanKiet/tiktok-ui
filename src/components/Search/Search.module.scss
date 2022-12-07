@@ -1,4 +1,5 @@
 @import '../../scss/variables';
+@import '../../scss/breakpoint';
 
 .search {
     display: flex;
@@ -69,6 +70,10 @@
 
     input:not(:placeholder-shown) ~ .search-btn {
         color: $text-color;
+    }
+
+    @include mobile {
+        display: none;
     }
 }
 

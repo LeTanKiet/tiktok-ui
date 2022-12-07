@@ -1,4 +1,5 @@
 @import '../../scss/variables';
+@import '../../scss/breakpoint';
 
 .post-item {
     max-height: 692px;
@@ -14,6 +15,11 @@
             object-fit: cover;
             border-radius: 50%;
             margin-right: 12px;
+
+            @include mobile {
+                width: 44px;
+                height: 44px;
+            }
         }
 
         .description {
@@ -27,6 +33,7 @@
             align-items: center;
             gap: 4px;
             font-size: 1.5rem;
+            cursor: pointer;
         }
 
         .follow-btn {
@@ -48,7 +55,12 @@
             .comment,
             .share {
                 position: absolute;
+                left: 20px;
                 cursor: pointer;
+
+                @include mobile {
+                    left: 12px;
+                }
             }
 
             .icon {
@@ -59,6 +71,11 @@
                 height: 48px;
                 border-radius: 50%;
                 background-color: rgba(22, 24, 35, 0.06);
+
+                @include mobile {
+                    width: 32px;
+                    height: 32px;
+                }
             }
 
             .count {
@@ -69,7 +86,6 @@
             }
 
             .like {
-                left: 20px;
                 bottom: 180px;
 
                 &.active {
@@ -79,16 +95,26 @@
                         color: $text-color;
                     }
                 }
+
+                @include mobile {
+                    bottom: 116px;
+                }
             }
 
             .comment {
-                left: 20px;
                 bottom: 100px;
+
+                @include mobile {
+                    bottom: 60px;
+                }
             }
 
             .share {
-                left: 20px;
                 bottom: 20px;
+
+                @include mobile {
+                    bottom: 4px;
+                }
             }
         }
     }

@@ -8,9 +8,10 @@ const Footer = ({ data = [] }) => {
     return (
         <div className={cx('footer')}>
             {data.map((item, index) => (
-                <span key={index} className={cx('footer-item')}>
+                // eslint-disable-next-line jsx-a11y/anchor-is-valid
+                <a href='#' key={index} className={cx('footer-item')}>
                     {item}
-                </span>
+                </a>
             ))}
             <div className={cx('copyright')}>&copy; 2022 TikTok</div>
         </div>

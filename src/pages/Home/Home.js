@@ -9,6 +9,10 @@ const Home = () => {
     const [currentData, setCurrentData] = useState([]);
 
     useEffect(() => {
+        document.title = `Tiktok - Make your day`;
+    }, []);
+
+    useEffect(() => {
         (async function () {
             const homeData = await homePage(currentPage);
             setCurrentData(currentData.concat(homeData));

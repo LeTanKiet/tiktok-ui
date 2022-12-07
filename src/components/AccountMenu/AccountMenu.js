@@ -13,6 +13,7 @@ const AccountMenu = ({
     small = false,
     moreTitle = '',
     tooltip = false,
+    sidebar = false,
     className = '',
     onItemClick,
 }) => {
@@ -27,7 +28,7 @@ const AccountMenu = ({
     };
 
     return (
-        <div className={className}>
+        <div className={cx(className, 'wrapper', { sidebar })}>
             <h3 className={cx('header')}>{title}</h3>
             {data.map((item) => {
                 return (
@@ -36,6 +37,7 @@ const AccountMenu = ({
                         key={item.id}
                         small={small}
                         tooltip={tooltip}
+                        sidebar={sidebar}
                         onClick={onItemClick}
                     />
                 );
@@ -60,6 +62,7 @@ AccountMenu.propTypes = {
     small: PropTypes.bool,
     moreTitle: PropTypes.string,
     tooltip: PropTypes.bool,
+    sidebar: PropTypes.bool,
     className: PropTypes.string,
     onItemClick: PropTypes.func,
 };

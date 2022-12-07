@@ -1,20 +1,32 @@
 @import '../../scss/variables';
+@import '../../scss/breakpoint';
 
 .wrapper {
     width: 340px;
     max-width: 100%;
-    padding: 20px 0;
-    max-height: calc(100vh - $header-height);
+    height: 100%;
+    padding-left: 8px;
     overflow-y: auto;
 
-    .separate {
-        height: 1px;
-        background-color: rgba(22, 24, 35, 0.12);
-        margin: 0 12px 12px;
+    @include tablet {
+        width: 72px;
+        overflow-y: overlay;
+        border-right: 1px solid rgba(22, 24, 35, 0.12);
+        box-shadow: rgb(0 0 0 / 6%) 0px 2px 8px;
     }
+
+    @include mobile {
+        display: none;
+    }
+}
+
+.inner {
+    padding: 20px 0;
 
     .discover {
         margin-bottom: 16px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(22, 24, 35, 0.12);
 
         &-header {
             font-size: 1.4rem;
@@ -51,5 +63,15 @@
                 word-break: break-word;
             }
         }
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        padding-right: 8px;
     }
 }

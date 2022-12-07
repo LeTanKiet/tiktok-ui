@@ -1,4 +1,10 @@
 @import '../../scss/variables';
+@import '../../scss/breakpoint';
+
+.wrapper {
+    border-top: 1px solid rgba(22, 24, 35, 0.12);
+    padding: 12px 0;
+}
 
 .header {
     font-size: 1.4rem;
@@ -19,5 +25,15 @@
     padding-left: 16px;
     color: $primary-color;
     cursor: pointer;
-    margin-bottom: 16px;
+    margin: 4px 0;
+}
+
+.wrapper.sidebar {
+    @include tablet {
+        .header,
+        .see-all,
+        .see-less {
+            display: none;
+        }
+    }
 }

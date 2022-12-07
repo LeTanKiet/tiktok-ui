@@ -25,42 +25,38 @@ const Sidebar = () => {
 
     return (
         <div className={cx('wrapper')}>
-            <NavMenu />
+            <div className={cx('inner')}>
+                <NavMenu />
 
-            <div className={cx('separate')}></div>
+                <AccountMenu
+                    data={suggestedAccounts}
+                    title='Suggested accounts'
+                    tooltip
+                    small
+                    moreTitle='See All'
+                    sidebar
+                />
 
-            <AccountMenu
-                data={suggestedAccounts}
-                title='Suggested accounts'
-                tooltip
-                small
-                moreTitle='See All'
-            />
+                <AccountMenu
+                    data={suggestedAccounts}
+                    title='Following accounts'
+                    small
+                    moreTitle='See More'
+                    sidebar
+                />
 
-            <div className={cx('separate')}></div>
+                <div className={cx('discover')}>
+                    <h3 className={cx('discover-header')}>Discover</h3>
+                    {DISCOVER_LIST.map((item, index) => (
+                        <div key={index} className={cx('discover-keyword')}>
+                            {item.icon}
+                            <span>{item.title}</span>
+                        </div>
+                    ))}
+                </div>
 
-            <AccountMenu
-                data={suggestedAccounts}
-                title='Following accounts'
-                small
-                moreTitle='See More'
-            />
-
-            <div className={cx('separate')}></div>
-
-            <div className={cx('discover')}>
-                <h3 className={cx('discover-header')}>Discover</h3>
-                {DISCOVER_LIST.map((item, index) => (
-                    <div key={index} className={cx('discover-keyword')}>
-                        {item.icon}
-                        <span>{item.title}</span>
-                    </div>
-                ))}
+                <Footer data={FOOTER_LIST} />
             </div>
-
-            <div className={cx('separate')}></div>
-
-            <Footer data={FOOTER_LIST} />
         </div>
     );
 };

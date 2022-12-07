@@ -1,5 +1,9 @@
+@import '../../../scss/_breakpoint.scss';
+
 .footer {
     margin: 8px 0;
+    padding-top: 12px;
+    border-top: 1px solid rgba(22, 24, 35, 0.12);
 
     &-item {
         display: inline-block;
@@ -17,5 +21,9 @@
         font-size: 1.2rem;
         color: rgba(22, 24, 35, 0.5);
         margin-top: 8px;
+    }
+
+    @include tablet {
+        display: none;
     }
 }

@@ -44,6 +44,10 @@
     color: $primary-color;
     background-color: #fff;
     border-color: currentColor;
+
+    &:hover {
+        background-color: rgba(254, 44, 85, 0.06);
+    }
 }
 
 .rounded {

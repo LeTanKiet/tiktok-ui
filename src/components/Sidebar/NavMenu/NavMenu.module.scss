@@ -1,15 +1,26 @@
 @import '../../../scss/variables';
+@import '../../../scss/breakpoint';
 
 .nav-menu {
     display: flex;
     flex-direction: column;
     margin-bottom: 8px;
-    padding-left: 8px;
 
     &-item {
         display: flex;
         align-items: center;
         padding: 8px;
+        transition: background-color 0.2s ease-in-out;
+
+        &:hover {
+            background-color: rgba(22, 24, 35, 0.03);
+        }
+
+        @include tablet {
+            padding-left: 0;
+            padding-right: 0;
+            justify-content: center;
+        }
     }
 
     &-item.active {
@@ -18,5 +29,9 @@
 
     &-title {
         margin-left: 6px;
+
+        @include tablet {
+            display: none;
+        }
     }
 }

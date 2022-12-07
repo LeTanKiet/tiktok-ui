@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
-import { useRef, useState } from 'react';
+import PropTypes from 'prop-types';
+import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
 import {
     FlagIcon,
     PauseIcon,
@@ -11,9 +12,9 @@ import styles from './PostVideo.module.scss';
 
 const cx = classNames.bind(styles);
 
-const PostVideo = ({ src = '' }) => {
+const PostVideo = forwardRef(({ src = '' }, ref) => {
     const videoRef = useRef();
-    const [isPlay, setIsPlay] = useState(true);
+    const [isPlay, setIsPlay] = useState(false);
     const [isMute, setIsMute] = useState(true);
 
     const handlePlay = () => {
@@ -34,6 +35,11 @@ const PostVideo = ({ src = '' }) => {
         setIsMute(false);
     };
 
+    useImperativeHandle(ref, () => ({
+        handlePlay,
+        handlePause,
+    }));
+
     return (
         <div className={cx('wrapper', { playing: isPlay })}>
             <video
@@ -41,7 +47,7 @@ const PostVideo = ({ src = '' }) => {
                 className={cx('video')}
                 src={src}
                 loop
-                autoPlay
+                autoPlay={isPlay}
                 muted={isMute}
             />
 
@@ -71,6 +77,10 @@ const PostVideo = ({ src = '' }) => {
             )}
         </div>
     );
+});
+
+PostVideo.propTypes = {
+    src: PropTypes.string,
 };
 
 export default PostVideo;
