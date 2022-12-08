@@ -1,9 +1,8 @@
-import { Fragment } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import './scss/App.scss';
 import DefaultLayout from './layouts/DefaultLayout/DefaultLayout';
 import { publicRoutes } from './routes';
+import './scss/App.scss';
 
 function App() {
     return (
@@ -17,14 +16,14 @@ function App() {
                         if (route.layout) {
                             Layout = route.layout;
                         } else if (route.layout === null) {
-                            Layout = Fragment;
+                            Layout = 'div';
                         }
 
                         return (
                             <Route
                                 path={route.path}
                                 element={
-                                    <Layout>
+                                    <Layout full={route.full}>
                                         <Comp />
                                     </Layout>
                                 }

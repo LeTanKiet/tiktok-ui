@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
+import { useRef } from 'react';
 
-import { useState } from 'react';
 import images from '~/assets/images';
 
 const Image = ({
@@ -9,14 +9,21 @@ const Image = ({
     fallback = images.no_image,
     className = '',
 }) => {
-    const [_fallback, setFallback] = useState('');
+    const imageRef = useRef();
+
+    const handleError = () => {
+        if (imageRef.current) {
+            imageRef.current.src = fallback;
+        }
+    };
 
     return (
         <img
+            ref={imageRef}
             className={className}
-            src={_fallback || src}
+            src={src}
             alt={alt}
-            onError={() => setFallback(fallback)}
+            onError={handleError}
         />
     );
 };

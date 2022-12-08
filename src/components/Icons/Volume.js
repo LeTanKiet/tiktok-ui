@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const VolumnIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
+const VolumeIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
     <svg
         width={width}
         height={height}
@@ -17,10 +17,10 @@ const VolumnIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
     </svg>
 );
 
-VolumnIcon.propTypes = {
+VolumeIcon.propTypes = {
     width: PropTypes.string,
     height: PropTypes.string,
     className: PropTypes.string,
 };
 
-export default VolumnIcon;
+export default VolumeIcon;

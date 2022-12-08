@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
 import Header from '~/components/Header/Header';
@@ -12,6 +13,10 @@ const HeaderLayout = ({ children }) => {
             <div className={cx('content')}>{children}</div>
         </div>
     );
+};
+
+HeaderLayout.propTypes = {
+    children: PropTypes.node.isRequired,
 };
 
 export default HeaderLayout;

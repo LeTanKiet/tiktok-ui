@@ -1,9 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
-import { useEffect } from 'react';
-import { useRef } from 'react';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { MENU_ITEM_SHARE } from '~/utils/data';
 import Button from '../Button/Button';
@@ -22,22 +20,42 @@ const PostItem = ({ data = {} }) => {
     const postRef = useRef();
 
     useEffect(() => {
-        postRef.current.addEventListener('mouseover', () => {
-            videoRef.current.handlePlay();
-        });
-        postRef.current.addEventListener('mouseleave', () => {
-            videoRef.current.handlePause();
-        });
-        return () => {
-            postRef.current.removeEventListener('mouseover', () => {
-                videoRef.current.handlePlay();
-            });
-            // eslint-disable-next-line react-hooks/exhaustive-deps
-            postRef.current.removeEventListener('mouseleave', () => {
-                videoRef.current.handlePause();
-            });
-        };
+        if (postRef.current) {
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.7,
+            };
+            const observer = new IntersectionObserver((entries) => {
+                for (const entry of entries) {
+                    if (entry.isIntersecting) {
+                        videoRef.current.handlePlay();
+                    } else {
+                        videoRef.current.handlePause();
+                    }
+                }
+            }, options);
+            observer.observe(postRef.current);
+        }
     }, []);
+
+    // useEffect(() => {
+    //     postRef.current.addEventListener('mouseover', () => {
+    //         videoRef.current.handlePlay();
+    //     });
+    //     postRef.current.addEventListener('mouseleave', () => {
+    //         videoRef.current.handlePause();
+    //     });
+    //     return () => {
+    //         postRef.current.removeEventListener('mouseover', () => {
+    //             videoRef.current.handlePlay();
+    //         });
+    //         // eslint-disable-next-line react-hooks/exhaustive-deps
+    //         postRef.current.removeEventListener('mouseleave', () => {
+    //             videoRef.current.handlePause();
+    //         });
+    //     };
+    // }, []);
 
     return (
         <div className={cx('post-item')} ref={postRef}>

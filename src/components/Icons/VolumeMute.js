@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const VolumnMuteIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
+const VolumeMuteIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
     <svg
         width={width}
         height={height}
@@ -17,10 +17,10 @@ const VolumnMuteIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
     </svg>
 );
 
-VolumnMuteIcon.propTypes = {
+VolumeMuteIcon.propTypes = {
     width: PropTypes.string,
     height: PropTypes.string,
     className: PropTypes.string,
 };
 
-export default VolumnMuteIcon;
+export default VolumeMuteIcon;

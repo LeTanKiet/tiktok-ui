@@ -33,3 +33,13 @@
     right: 16px;
     z-index: 10;
 }
+
+.wrapper.full {
+    .container {
+        max-width: 100%;
+    }
+
+    .content {
+        flex: 1;
+    }
+}

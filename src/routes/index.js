@@ -7,13 +7,12 @@ import Search from '~/pages/Search/Search';
 import Upload from '~/pages/Upload/Upload';
 import config from '~/config';
 import HeaderLayout from '~/layouts/HeaderLayout/HeaderLayout';
-import FullscreenLayout from '~/layouts/FullscreenLayout/FullscreenLayout';
 
 const publicRoutes = [
     { path: config.routes.home, element: Home },
     { path: config.routes.following, element: Following },
     { path: config.routes.upload, element: Upload, layout: HeaderLayout },
-    { path: config.routes.profile, element: Profile, layout: FullscreenLayout },
+    { path: config.routes.profile, element: Profile, full: true },
     { path: config.routes.search, element: Search },
     { path: config.routes.live, element: Live, layout: HeaderLayout },
     { path: config.routes.not_found, element: NotFound, layout: null },

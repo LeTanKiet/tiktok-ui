@@ -1,21 +1,25 @@
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
+
 import {
     FlagIcon,
     PauseIcon,
     PlayIcon,
-    VolumnIcon,
-    VolumnMuteIcon,
+    VolumeIcon,
+    VolumeMuteIcon,
 } from '../../Icons';
 import styles from './PostVideo.module.scss';
 
 const cx = classNames.bind(styles);
 
 const PostVideo = forwardRef(({ src = '' }, ref) => {
-    const videoRef = useRef();
     const [isPlay, setIsPlay] = useState(false);
     const [isMute, setIsMute] = useState(true);
+    const [volumeValue, setVolumeValue] = useState(40);
+
+    const videoRef = useRef();
+    const volumeRef = useRef();
 
     const handlePlay = () => {
         setIsPlay(true);
@@ -33,6 +37,17 @@ const PostVideo = forwardRef(({ src = '' }, ref) => {
 
     const handleUnmute = () => {
         setIsMute(false);
+    };
+
+    const handleChangeVolume = (e) => {
+        const currentValue = +e.target.value;
+        setVolumeValue(currentValue);
+        videoRef.current.volume = currentValue / 100;
+        if (e.target.value === '0') {
+            handleMute();
+        } else {
+            handleUnmute();
+        }
     };
 
     useImperativeHandle(ref, () => ({
@@ -66,15 +81,28 @@ const PostVideo = forwardRef(({ src = '' }, ref) => {
                 </div>
             )}
 
-            {isMute ? (
-                <div className={cx('volumn-mute')} onClick={handleUnmute}>
-                    <VolumnMuteIcon />
+            <div className={cx('volume')}>
+                <div className={cx('volume-bar-block')}>
+                    <input
+                        ref={volumeRef}
+                        className={cx('volume-bar')}
+                        type='range'
+                        min={0}
+                        max={100}
+                        value={volumeValue}
+                        onChange={handleChangeVolume}
+                    />
                 </div>
-            ) : (
-                <div className={cx('volumn')} onClick={handleMute}>
-                    <VolumnIcon />
-                </div>
-            )}
+                {isMute ? (
+                    <div className={cx('volume-mute')} onClick={handleUnmute}>
+                        <VolumeMuteIcon />
+                    </div>
+                ) : (
+                    <div className={cx('volume-unmute')} onClick={handleMute}>
+                        <VolumeIcon />
+                    </div>
+                )}
+            </div>
         </div>
     );
 });

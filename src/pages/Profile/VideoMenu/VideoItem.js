@@ -18,15 +18,17 @@ const VideoItem = ({ data }) => {
     };
 
     return (
-        <div className={cx('video-item')}>
+        <div
+            className={cx('video-item')}
+            onMouseOver={handleMouseOver}
+            onMouseLeave={handleMouseLeave}
+        >
             <video
                 ref={videoRef}
                 src={data.file_url}
                 loop
                 muted='muted'
                 className={cx('video')}
-                onMouseOver={handleMouseOver}
-                onMouseLeave={handleMouseLeave}
             ></video>
             <p className={cx('description')}>{data.description}</p>
             <div className={cx('views')}>
